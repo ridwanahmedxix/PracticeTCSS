@@ -45,14 +45,25 @@
             >Contact</a
           >
         </li>
+        <li onclick="OpenSideBar()" class="h-[50px]">
+          <a
+            href="#"
+            class="flex items-center hover:bg-[#0F172A] hover:text-white px-[30px] h-[100%]"
+            ><img
+              style="width: 26px; height: 26px; background-color: green"
+              src="photo/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png"
+              alt=""
+          /></a>
+        </li>
       </ul>
     </nav>
 
     <nav class="bg-slate-300">
       <ul
-        class="fixed top-0 right-0 flex flex-col w-[250px] h-[100vh] items-start justify-start z-[999] bg-slate-300"
+        id="sideBAR"
+        class="fixed top-0 right-0 hidden flex-col w-[250px] h-[100vh] items-start justify-start z-[999] bg-slate-300"
       >
-        <li class="h-[50px] mr-auto w-[100%]">
+        <li onclick="closeSidebar()" class="h-[50px] mr-auto w-[100%]">
           <a
             href="#"
             class="flex items-center hover:bg-[#0F172A] hover:text-white px-[30px] h-[100%] w-[100%]"
@@ -92,5 +103,6 @@
         </li>
       </ul>
     </nav>
+    <script src="about.js"></script>
   </body>
 </html>
