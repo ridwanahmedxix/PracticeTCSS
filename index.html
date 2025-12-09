@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,44 +8,38 @@
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body class="bg-[#2B2D33]">
-    <nav class="bg-[#2B2D33] shadow-xl sticky top-0 z-10">
-      <div class="container mx-auto px-10">
-        <div class="sm:flex sm:justify-between py-5 items-center">
-          <div class="text-white text-[25px] text-center pb-5 sm:pb-0">
-            <a href="#">
-              <span class="text-[#F65023] font-bold">R</span>idwan Ah<span
-                class="text-[#F65023] font-bold"
-                >med</span
-              ></a
-            >
-          </div>
-          <ul class="sm:flex text-white text-center">
-            <li class="border-t sm:border-none pt-5 sm:pt-0">
-              <a href="#" class="px-5 text-[19px] text-[#F65023]"> Home </a>
-            </li>
-            <li>
-              <a href="#" class="px-5 text-[19px] hover:text-[#F65023]">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#" class="px-5 text-[19px] hover:text-[#F65023]">
-                Clients
-              </a>
-            </li>
-            <li>
-              <a href="#" class="px-5 text-[19px] hover:text-[#F65023]">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#" class="px-5 text-[19px] hover:text-[#F65023]">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+    <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <h1 class="text-2xl font-bold text-gray-800">Ridwan</h1>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="sm:hidden text-gray-800 text-3xl">☰</button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden sm:flex space-x-6 font-medium text-gray-700">
+          <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+
+          <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+          <li><a href="#client" class="hover:text-blue-500">Clients</a></li>
+          <li><a href="#products" class="hover:text-blue-500">Products</a></li>
+          <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+        </ul>
       </div>
+
+      <!-- Mobile Menu -->
+      <ul
+        id="mobileMenu"
+        class="hidden sm:hidden px-4 pb-4 space-y-3 text-gray-700 font-medium"
+      >
+        <li><a href="#home" class="block py-2 border-b">Home</a></li>
+        <li><a href="#services" class="block py-2 border-b">Services</a></li>
+        <li><a href="#client" class="block py-2 border-b">Clients</a></li>
+        <li><a href="#products" class="block py-2 border-b">Products</a></li>
+        <li><a href="#contact" class="block py-2">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- HEADER SECTION CODE START  -->
@@ -193,6 +187,7 @@
       <!-- SECOND SECTION CODE START  -->
 
       <section
+        id="client"
         class="py-16 md:py-48 grid place-content-center text-center mb-14 sm:mx-[50px]"
       >
         <!-- PARENT DIV  -->
@@ -292,7 +287,7 @@
 
       <!-- FOURTH SECTION CODE START  -->
 
-      <section class="mb-28">
+      <section id="products" class="mb-28">
         <!-- PARENT DIV -->
         <div
           class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-16 justify-center items-center mx-[20px] sm:mx-[50px] md:mx-[100px]"
@@ -393,7 +388,7 @@
       </section>
     </main>
     <!-- FOOTER SECTION CODE START  -->
-    <footer class="my-20">
+    <footer id="contact" class="my-20">
       <!-- PARENT DIV  -->
       <div
         class="grid text-center sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-14 lg:gap-20 text-white mx-10 sm:mx-14 md:mx-20"
@@ -439,5 +434,22 @@
     <p class="text-center text-purple-500 mt-4 mb-14">
       © Copyright - 2026 - Designed by Ridwan Ahmed Team's
     </p>
+
+    <script>
+      const btn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      btn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // CLICK = Close menu + Scroll works normally
+      const links = mobileMenu.querySelectorAll("a");
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
